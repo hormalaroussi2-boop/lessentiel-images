@@ -19,7 +19,7 @@ HF = "https://huggingface.co/rhasspy/piper-voices/resolve/main/fr/fr_FR"
 
 args = sys.argv[1:]
 d = args[0]
-voice = args[args.index("--voice") + 1] if "--voice" in args else "tom"
+voice = args[args.index("--voice") + 1] if "--voice" in args else "siwis"
 base = float(args[args.index("--sec") + 1]) if "--sec" in args else 3.5
 slides = sorted(glob.glob(os.path.join(d, "slide-*.jpg")),
                 key=lambda p: int(p.rsplit("-", 1)[1].split(".")[0]))
