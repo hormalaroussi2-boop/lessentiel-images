@@ -79,9 +79,18 @@ if voice != "none":
     for i, t in enumerate(texts()):
         if not t:
             continue
+        raw = os.path.join(d, f".voice-{i}-raw.wav")
         w = os.path.join(d, f".voice-{i}.wav")
-        run(sys.executable, "-m", "piper", "-m", model, "-f", w, "--length-scale", "0.9",
+        # Réglages pour une voix plus naturelle : rythme posé, intonation variée, pauses.
+        run(sys.executable, "-m", "piper", "-m", model, "-f", raw, "--length-scale", "1.0",
+            "--noise-scale", "0.6", "--noise-w-scale", "0.85", "--sentence-silence", "0.28",
             input=t, text=True, capture_output=True)
+        # Traitement « studio » : voix plus chaude et plus claire, compressée, très légère réverb.
+        run("ffmpeg", "-y", "-loglevel", "error", "-i", raw, "-af",
+            "highpass=f=80,equalizer=f=200:t=q:w=1:g=1.5,equalizer=f=3500:t=q:w=1.2:g=2.5,"
+            "equalizer=f=7500:t=q:w=1:g=-2,acompressor=threshold=-20dB:ratio=3:attack=5:release=80:makeup=3dB,"
+            "aecho=0.8:0.6:25:0.12,loudnorm=I=-16:TP=-1.5:LRA=7", "-ar", "44100", w)
+        os.remove(raw)
         voice_files[i] = w
 durs = [max(base, duration(v) + 0.7) if v else base for v in voice_files]
 starts = [sum(durs[:i]) - i * T for i in range(len(slides))]
@@ -126,7 +135,7 @@ for i, v in enumerate(voice_files):
     if v:
         inputs += ["-i", v]
         ms = int((starts[i] + 0.25) * 1000)
-        fc += f"[{n}:a]aresample=44100,aformat=channel_layouts=stereo,adelay={ms}|{ms},volume=1.6[v{i}];"
+        fc += f"[{n}:a]aresample=44100,aformat=channel_layouts=stereo,adelay={ms}|{ms}[v{i}];"
         audio_labels.append(f"[v{i}]")
         n += 1
 music = sorted(glob.glob(os.path.join(REPO, "assets", "music", "*.m4a")))
