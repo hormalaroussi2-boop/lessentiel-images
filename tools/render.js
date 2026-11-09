@@ -29,6 +29,13 @@ function slide(s, i) {
 <ul>${s.items.map(([t, x]) => `<li><b>${esc(t)}</b><span>${esc(x)}</span></li>`).join('')}</ul>
 ${N > 1 ? '<div class="swipe">Faites défiler →</div>' : ''}${foot(n)}`;
   }
+  if (s.type === 'story' && s.image) {
+    const src = 'data:image/jpeg;base64,' + fs.readFileSync(path.join(dir, s.image)).toString('base64');
+    return `${head}<div class="photo" style="background-image:url('${src}')"><div class="credit">${esc(s.credit || '')}</div>
+<div class="tag ontop">${esc(s.tag)}<span class="ctry">${esc(s.country)}</span></div></div>
+<h1 class="withimg">${esc(s.title)}</h1><p class="withimg">${esc(s.body)}</p>
+<div class="src">Source : ${esc(s.source)}</div>${foot(n)}`;
+  }
   if (s.type === 'story') {
     return `${head}<div class="tag">${esc(s.tag)}<span class="ctry">${esc(s.country)}</span></div>
 <h1>${esc(s.title)}</h1><div class="rule"></div><p>${esc(s.body)}</p>
@@ -55,6 +62,10 @@ p{font-size:38px;line-height:1.42;color:#2a2a2a}b{color:#b3261e}
 ul{list-style:none}li{font-size:36px;padding:16px 0;border-bottom:1px solid #c9c1b0;display:flex;align-items:baseline}li b{flex:0 0 250px;font-family:'Inter';font-weight:800;font-size:26px;letter-spacing:2px;color:#b3261e}
 .swipe{position:absolute;bottom:160px;right:80px;font-family:'Inter';font-weight:700;font-size:30px}
 .q{margin-top:150px;font-size:60px;font-style:italic;color:#b3261e}.big2{font-size:88px}.cta{font-family:'Inter';font-weight:600}
+.photo{position:relative;margin:30px -80px 0;height:500px;background-size:cover;background-position:center}
+.credit{position:absolute;right:12px;bottom:10px;font-family:'Inter';font-size:16px;color:#fff;background:rgba(0,0,0,.55);padding:4px 10px;max-width:900px}
+.tag.ontop{position:absolute;left:80px;bottom:-28px;margin:0}
+h1.withimg{font-size:58px;margin-top:62px}p.withimg{font-size:33px;margin-top:22px}
 .follow{position:absolute;bottom:170px;left:80px;right:80px;background:#141414;color:#f4efe4;text-align:center;padding:36px;font-family:'Inter';font-weight:900;font-size:50px;letter-spacing:4px}.follow span{font-weight:500;font-size:28px;letter-spacing:1px}`;
 
 (async () => {
