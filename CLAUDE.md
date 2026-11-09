@@ -96,6 +96,9 @@ En plus, la veille horaire publie un post court quand une info **importante** to
   décision qui touche tout le monde au porte-monnaie, annonce énorme type GTA 6, résultat
   sportif historique) ;
 - `edition: "FLASH"` pour une info importante qui fait parler aujourd'hui.
-Conditions : confirmée par au moins 2 médias fiables, pas déjà publiée, 1 ou 2 slides story,
+Nombre de slides : autant que nécessaire pour bien expliquer (1 à 6). Si le sujet est
+complexe ou évolue (plusieurs faits, chiffres, réactions, « ce qu'il faut savoir »), fais un
+carrousel : 1 slide d'accroche + 1 slide par élément + éventuellement 1 slide « et maintenant ? ».
+Conditions : confirmée par au moins 2 médias fiables, pas déjà publiée,
 **maximum 4 flashs/urgents par jour**, et au moins 45 minutes après le post précédent.
 S'il n'y a rien d'important : ne rien publier.
