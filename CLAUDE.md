@@ -63,9 +63,13 @@ Légende : 1 phrase d'accroche, le résumé des titres avec emojis, une question
   les rumeurs non confirmées et les chiffres non recoupés. Dans le doute, ne pas publier l'info.
 - Ne pas répéter une info déjà publiée le même jour (vérifier `posts/` du jour).
 
-## Infos urgentes (veille horaire)
-Ne publier un post « URGENT » que pour une info **majeure** pour la Belgique ou la France
-(chute de gouvernement, catastrophe, attentat, décision qui touche tout le monde au porte-monnaie,
-sortie ou annonce d'un jeu énorme type GTA 6, résultat sportif historique), confirmée par
-au moins 2 médias fiables, et pas déjà publiée. Format : `edition: "URGENT"`, 1 ou 2 slides story.
-Maximum 2 posts urgents par jour. S'il n'y a rien de majeur : ne rien publier.
+## Infos urgentes et flashs (veille horaire, 8h–22h)
+Posts réguliers : 11h (MATIN), 16h (APRÈS-MIDI), 20h (SOIR).
+En plus, la veille horaire publie un post court quand une info **importante** tombe :
+- `edition: "URGENT"` pour une info majeure (chute de gouvernement, catastrophe, attentat,
+  décision qui touche tout le monde au porte-monnaie, annonce énorme type GTA 6, résultat
+  sportif historique) ;
+- `edition: "FLASH"` pour une info importante qui fait parler aujourd'hui.
+Conditions : confirmée par au moins 2 médias fiables, pas déjà publiée, 1 ou 2 slides story,
+**maximum 4 flashs/urgents par jour**, et au moins 45 minutes après le post précédent.
+S'il n'y a rien d'important : ne rien publier.

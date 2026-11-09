@@ -1,6 +1,6 @@
 // Génère les images d'un post (carrousel style journal) à partir d'un post.json.
 // Usage : node tools/render.js posts/<dossier>
-// post.json : { "date": "LUNDI 9 NOVEMBRE 2026", "edition": "MATIN" | "APRÈS-MIDI" | "URGENT",
+// post.json : { "date": "LUNDI 9 NOVEMBRE 2026", "edition": "MATIN" | "APRÈS-MIDI" | "SOIR" | "FLASH" | "URGENT",
 //   "slides": [
 //     { "type": "cover", "items": [["ARGENT", "Titre court"], ...] },
 //     { "type": "story", "tag": "ARGENT", "country": "FRANCE", "title": "...", "body": "... <b>mot clé</b> ...", "source": "franceinfo, Le Monde" },
@@ -16,14 +16,14 @@ const post = JSON.parse(fs.readFileSync(path.join(dir, 'post.json'), 'utf8'));
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
   .replace(/&lt;b&gt;/g, '<b>').replace(/&lt;\/b&gt;/g, '</b>');
 const N = post.slides.length;
-const urgent = post.edition === 'URGENT';
-const head = `<div class="mast"><div class="brand">L'ESSENTIEL${urgent ? ' <span class="urg">URGENT</span>' : ''}</div><div class="date">${esc(post.date)}</div></div>`;
+const badge = ['URGENT', 'FLASH'].includes(post.edition) ? post.edition : '';
+const head = `<div class="mast"><div class="brand">L'ESSENTIEL${badge ? ` <span class="urg">${badge}</span>` : ''}</div><div class="date">${esc(post.date)}</div></div>`;
 const foot = (n) => `<div class="foot"><span>@LESSENTIEL.BEFR</span><span>${N > 1 ? `${n}/${N}` : 'BELGIQUE · FRANCE'}</span></div>`;
 
 function slide(s, i) {
   const n = i + 1;
   if (s.type === 'cover') {
-    const ed = post.edition === 'APRÈS-MIDI' ? "de l'après-midi" : post.edition === 'MATIN' ? 'du matin' : 'du jour';
+    const ed = { 'MATIN': 'du matin', 'APRÈS-MIDI': "de l'après-midi", 'SOIR': 'du soir' }[post.edition] || 'du jour';
     return `${head}<div class="kicker">ÉDITION BELGIQUE · FRANCE</div>
 <h1 class="big">L'essentiel<br>${ed}</h1><div class="rule"></div>
 <ul>${s.items.map(([t, x]) => `<li><b>${esc(t)}</b><span>${esc(x)}</span></li>`).join('')}</ul>
@@ -43,7 +43,7 @@ ${N > 1 ? '<div class="swipe">Faites défiler →</div>' : ''}${foot(n)}`;
   }
   if (s.type === 'end') {
     return `${head}<div class="q">Et vous ?</div><h1 class="big2">${esc(s.question)}</h1><div class="rule"></div>
-<p class="cta">Répondez en commentaire</p><div class="follow">ABONNEZ-VOUS<br><span>l'essentiel à 11h et 16h, chaque jour</span></div>${foot(n)}`;
+<p class="cta">Répondez en commentaire</p><div class="follow">ABONNEZ-VOUS<br><span>l'essentiel à 11h, 16h et 20h, chaque jour</span></div>${foot(n)}`;
   }
   throw new Error('type de slide inconnu : ' + s.type);
 }
