@@ -22,9 +22,18 @@ télécharge le n-ième et affiche le crédit. Mettre dans la story `"image": "i
 l'événement lui-même, donc pas de photo de foule pour une manif précise, pas d'accident, etc.
 Si rien de pertinent : story sans photo.
 
-## Vidéos (Reels)
-Prévu plus tard : Reels à partir de vidéos libres (Wikimedia Commons, etc.) montées avec ffmpeg.
-Jamais de vidéo d'un média ou d'un éditeur de jeu.
+## Vidéos (Reels) — chaque soir après le post de 20h
+Style « actu rapide » (inspiré des formats d'actu en vidéo courte, sans copier aucun autre
+compte) : une idée par écran, titres forts, rythme rapide.
+1. Dans le dossier du post de 20h : `python3 tools/make_reel.py posts/<dossier> 3.5`
+   -> `reel.mp4` (slides en plein écran, zoom fluide, transitions, barre de progression,
+   musique libre de `assets/music/`). Le script affiche le crédit musique.
+2. Écris `reel_caption.txt` : accroche courte (« L'actu du jour en 30 secondes 👇 »),
+   les 5 titres, une question, les hashtags, et en dernière ligne le crédit musique affiché.
+3. Vérifie une image du milieu de la vidéo (ffmpeg -ss 10 -frames:v 1), puis
+   `python3 tools/publish.py posts/<dossier> --reel`, commit et push.
+Jamais de vidéo, d'extrait ou de musique d'un média, d'un artiste commercial ou d'un éditeur
+de jeu : seulement les fichiers libres de `assets/music/` et nos propres slides.
 
 Ce dépôt sert à produire et publier les posts du compte Instagram **@lessentiel.befr**
 (actualité Belgique 🇧🇪 + France 🇫🇷, en français). Les images sont hébergées ici
