@@ -1,0 +1,10 @@
+{ "date": "LUNDI 9 NOVEMBRE 2026", "edition": "FLASH",
+  "slides": [
+    { "type": "story", "tag": "ARGENT", "country": "FRANCE",
+      "title": "Le Smic augmente de 1,6 % dès le 1er décembre",
+      "body": "Annonce du gouvernement à la sortie de la conférence sociale : le salaire minimum passe à environ <b>1 502 € net</b> par mois, soit <b>+24 €</b>. La hausse arrive <b>un mois plus tôt</b> que la revalorisation habituelle de janvier.",
+      "image": "img-1.jpg", "credit": "Photo : ScareCriterion12 / Wikimedia Commons (CC BY-SA 4.0)" },
+    { "type": "story", "tag": "RÉACTIONS", "country": "FRANCE",
+      "title": "Assez ou pas assez ?",
+      "body": "<b>Le gouvernement</b> évoque d'autres pistes : revoir les baisses de cotisations patronales, des aides liées à l'énergie (pas encore décidées). <b>Des syndicats</b> jugent que ce n'est pas suffisant : avant la réunion, la CFDT demandait <b>+100 € net</b> et la CGT <b>+10 %</b>." }
+  ] }
