@@ -1,0 +1,24 @@
+{ "date": "LUNDI 9 NOVEMBRE 2026", "edition": "MATIN",
+  "slides": [
+    { "type": "cover", "items": [
+      ["ARGENT", "Smic : réunion décisive à Matignon"],
+      ["POLITIQUE", "Budget : De Wever relance les discussions"],
+      ["SOCIÉTÉ", "Grève : des bus Letec à l'arrêt"],
+      ["SOCIÉTÉ", "France : grève dans l'éducation demain"]
+    ] },
+    { "type": "story", "tag": "ARGENT", "country": "FRANCE",
+      "title": "Smic : syndicats et patronat réunis à Matignon",
+      "body": "Le Premier ministre Sébastien Lecornu réunit ce lundi une <b>conférence sociale</b> sur les salaires. Le Smic, à environ <b>1 478 € net</b>, est au centre. Le ministre du Travail veut franchir les <b>1 500 €</b> ; des syndicats jugent que ce n'est pas assez.",
+      "image": "img-1.jpg", "credit": "Photo : ScareCriterion12 / Wikimedia Commons (CC BY-SA 4.0)" },
+    { "type": "story", "tag": "POLITIQUE", "country": "BELGIQUE",
+      "title": "Budget : Bart De Wever reprend les négociations",
+      "body": "Le roi ayant refusé sa démission vendredi, le Premier ministre revoit <b>un par un</b> les partis de la majorité à partir d'aujourd'hui. Objectif : trouver un accord sur le budget. Il doit refaire rapport au roi le <b>16 novembre</b>." },
+    { "type": "story", "tag": "SOCIÉTÉ", "country": "BELGIQUE",
+      "title": "Wallonie : de nombreux bus Letec à l'arrêt",
+      "body": "Les chauffeurs des <b>sociétés privées</b> qui roulent pour Letec font grève ce lundi pour leurs salaires et leurs conditions de travail. De nombreuses lignes sont perturbées. Une nouvelle grève est déjà annoncée le <b>4 décembre</b>.",
+      "image": "img-2.jpg", "credit": "Photo : Le Sharkoïste / Wikimedia Commons (CC BY-SA 4.0)" },
+    { "type": "story", "tag": "SOCIÉTÉ", "country": "FRANCE",
+      "title": "Éducation : appel à la grève ce mardi",
+      "body": "Une intersyndicale de l'Éducation nationale et du supérieur appelle à la grève le <b>10 novembre</b>. Elle réclame des hausses de salaires et des postes. Les syndicats de la fonction publique ne sont <b>pas invités</b> à la conférence de ce lundi." },
+    { "type": "end", "question": "Un Smic à 1 500 € net, c'est suffisant selon vous ?" }
+  ] }
