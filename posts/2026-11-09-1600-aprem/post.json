@@ -1,0 +1,14 @@
+{ "date": "LUNDI 9 NOVEMBRE 2026", "edition": "APRÈS-MIDI",
+  "slides": [
+    { "type": "cover", "items": [
+      ["ARGENT", "Jours fériés 2027 : 3 tombent le week-end"],
+      ["JEUX VIDÉO", "Football Manager 27 sort demain"]
+    ] },
+    { "type": "story", "tag": "ARGENT", "country": "BELGIQUE",
+      "title": "Jours fériés 2027 : trois tombent un week-end",
+      "body": "Le <b>1er mai</b> et <b>Noël</b> tombent un samedi, le <b>15 août</b> un dimanche. Les employeurs doivent fixer les <b>jours de remplacement</b> avant le 15 décembre. Bonne nouvelle : l'Ascension (6 mai) et le 11 novembre tombent un jeudi, idéal pour un <b>pont</b>." },
+    { "type": "story", "tag": "JEUX VIDÉO", "country": "BE · FR",
+      "title": "Football Manager 27 sort demain",
+      "body": "Le jeu de gestion de club arrive le <b>10 novembre</b> sur PC, PS5, Xbox et mobile. Il est inclus <b>dès sa sortie</b> dans le Game Pass, sans coût en plus pour les abonnés." },
+    { "type": "end", "question": "Vous faites quoi de vos ponts en 2027 ?" }
+  ] }
