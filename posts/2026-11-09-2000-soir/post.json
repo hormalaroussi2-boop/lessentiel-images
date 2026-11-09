@@ -1,0 +1,19 @@
+{ "date": "LUNDI 9 NOVEMBRE 2026", "edition": "SOIR",
+  "slides": [
+    { "type": "cover", "items": [
+      ["POLITIQUE", "Teddy Riner candidat à la présidentielle"],
+      ["SOCIÉTÉ", "La Belgique recrée sa défense antiaérienne"],
+      ["GASTRONOMIE", "Gault & Millau 2027 : un seul 5 toques"]
+    ] },
+    { "type": "story", "tag": "POLITIQUE", "country": "FRANCE",
+      "title": "Teddy Riner candidat à la présidentielle 2027",
+      "body": "Le judoka aux <b>cinq titres olympiques</b> a annoncé sa candidature ce lundi dans une vidéo sur les réseaux sociaux. Il se dit « <b>ni de droite ni de gauche</b> ». Son slogan : « La France que l'on veut ».",
+      "image": "img-1.jpg", "credit": "Photo : Martin Hesketh / Wikimedia Commons (CC BY 2.0)" },
+    { "type": "story", "tag": "SOCIÉTÉ", "country": "BELGIQUE",
+      "title": "Après 25 ans, la Belgique recrée sa défense antiaérienne",
+      "body": "L'armée relance la <b>51e Escadrille</b>, une unité chargée de protéger le ciel, d'abord basée à <b>Beauvechain</b>. Le programme, avec les Pays-Bas, coûte <b>3,1 milliards d'euros</b> : systèmes NASAMS et Skyranger." },
+    { "type": "story", "tag": "GASTRONOMIE", "country": "BELGIQUE",
+      "title": "Gault & Millau 2027 : Boury seul au sommet",
+      "body": "Le guide a dévoilé ses notes ce lundi. Le restaurant <b>Boury</b>, à Roulers, reste le <b>seul de Belgique</b> avec cinq toques et 19/20. <b>L'Air du Temps</b>, à Eghezée, perd une toque et passe à quatre." },
+    { "type": "end", "question": "Un sportif à l’Élysée, vous y croyez ?" }
+  ] }
