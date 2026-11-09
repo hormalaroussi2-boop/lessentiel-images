@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fabrique un Reel vertical (1080x1920) dynamique, avec voix off, à partir des slides d'un post.
 
-Usage : python3 tools/make_reel.py posts/<dossier> [--voice tom|siwis|none] [--sec 3.5]
+Usage : python3 tools/make_reel.py posts/<dossier> [--voice kokoro|siwis|tom|none] [--sec 3.5]
 Sortie : posts/<dossier>/reel.mp4 + affiche le crédit musique à mettre dans la légende.
 
 - Voix off (Piper, voix française gratuite, installée/téléchargée automatiquement) :
@@ -19,7 +19,7 @@ HF = "https://huggingface.co/rhasspy/piper-voices/resolve/main/fr/fr_FR"
 
 args = sys.argv[1:]
 d = args[0]
-voice = args[args.index("--voice") + 1] if "--voice" in args else "siwis"
+voice = args[args.index("--voice") + 1] if "--voice" in args else "kokoro"
 base = float(args[args.index("--sec") + 1]) if "--sec" in args else 3.5
 slides = sorted(glob.glob(os.path.join(d, "slide-*.jpg")),
                 key=lambda p: int(p.rsplit("-", 1)[1].split(".")[0]))
@@ -72,24 +72,52 @@ def ensure_voice():
     return model
 
 
+KOKORO = "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0"
+
+
+def kokoro_engine():
+    """Moteur Kokoro (voix française ff_siwis, plus fluide que Piper)."""
+    try:
+        from kokoro_onnx import Kokoro
+    except ImportError:
+        run(sys.executable, "-m", "pip", "install", "-q", "kokoro-onnx", "soundfile")
+        from kokoro_onnx import Kokoro
+    kd = os.path.join(VOICES, "kokoro")
+    os.makedirs(kd, exist_ok=True)
+    for f in ("kokoro-v1.0.onnx", "voices-v1.0.bin"):
+        if not os.path.exists(os.path.join(kd, f)):
+            run("curl", "-sSL", "-o", os.path.join(kd, f), f"{KOKORO}/{f}")
+    return Kokoro(os.path.join(kd, "kokoro-v1.0.onnx"), os.path.join(kd, "voices-v1.0.bin"))
+
+
 # 1. Voix off
 voice_files = [None] * len(slides)
 if voice != "none":
-    model = ensure_voice()
+    if voice == "kokoro":
+        import soundfile as sf
+        engine = kokoro_engine()
+    else:
+        model = ensure_voice()
     for i, t in enumerate(texts()):
         if not t:
             continue
         raw = os.path.join(d, f".voice-{i}-raw.wav")
         w = os.path.join(d, f".voice-{i}.wav")
-        # Réglages pour une voix plus naturelle : rythme posé, intonation variée, pauses.
-        run(sys.executable, "-m", "piper", "-m", model, "-f", raw, "--length-scale", "1.0",
-            "--noise-scale", "0.6", "--noise-w-scale", "0.85", "--sentence-silence", "0.28",
-            input=t, text=True, capture_output=True)
-        # Traitement « studio » : voix plus chaude et plus claire, compressée, très légère réverb.
-        run("ffmpeg", "-y", "-loglevel", "error", "-i", raw, "-af",
-            "highpass=f=80,equalizer=f=200:t=q:w=1:g=1.5,equalizer=f=3500:t=q:w=1.2:g=2.5,"
-            "equalizer=f=7500:t=q:w=1:g=-2,acompressor=threshold=-20dB:ratio=3:attack=5:release=80:makeup=3dB,"
-            "aecho=0.8:0.6:25:0.12,loudnorm=I=-16:TP=-1.5:LRA=7", "-ar", "44100", w)
+        if voice == "kokoro":
+            samples, sr = engine.create(t, voice="ff_siwis", speed=1.05, lang="fr-fr")
+            sf.write(raw, samples, sr)
+            af = ("highpass=f=70,equalizer=f=3000:t=q:w=1.2:g=1.5,"
+                  "acompressor=threshold=-20dB:ratio=2.5:attack=5:release=80:makeup=2dB,"
+                  "loudnorm=I=-16:TP=-1.5:LRA=7")
+        else:
+            run(sys.executable, "-m", "piper", "-m", model, "-f", raw, "--length-scale", "0.95",
+                "--noise-scale", "0.667", "--noise-w-scale", "0.8", "--sentence-silence", "0.12",
+                input=t, text=True, capture_output=True)
+            af = ("highpass=f=80,equalizer=f=3500:t=q:w=1.2:g=2,"
+                  "acompressor=threshold=-20dB:ratio=3:attack=5:release=80:makeup=3dB,"
+                  "loudnorm=I=-16:TP=-1.5:LRA=7")
+        # Traitement « studio » : voix plus claire et régulière en volume.
+        run("ffmpeg", "-y", "-loglevel", "error", "-i", raw, "-af", af, "-ar", "44100", w)
         os.remove(raw)
         voice_files[i] = w
 durs = [max(base, duration(v) + 0.7) if v else base for v in voice_files]

@@ -30,7 +30,7 @@ compte) : une idée par écran, titres forts, rythme rapide.
    expliquais l'actu à un ami : « En Belgique, coup de théâtre : … ». 1 à 2 phrases par
    ligne, sans abréviations ni emojis (la voix les lit mal). Écris les nombres en toutes
    lettres si c'est ambigu.
-2. `python3 tools/make_reel.py posts/<dossier> --voice siwis`
+2. `python3 tools/make_reel.py posts/<dossier> --voice kokoro`
    -> `reel.mp4` (voix off française, slides plein écran, zoom fluide, transitions, barre de
    progression, musique libre de `assets/music/` baissée sous la voix s'il y en a). Le script
    affiche le crédit musique s'il en a utilisé une.
