@@ -29,8 +29,10 @@ compte) : une idée par écran, titres forts, rythme rapide.
    l'ordre (cover, 5 stories, end). Style oral, phrases courtes et vivantes, comme si tu
    expliquais l'actu à un ami : « En Belgique, coup de théâtre : … ». 1 à 2 phrases par
    ligne, sans abréviations ni emojis (la voix les lit mal). Écris les nombres en toutes
-   lettres si c'est ambigu.
-2. `python3 tools/make_reel.py posts/<dossier> --voice kokoro`
+   lettres si c'est ambigu. Écris les noms propres difficiles **comme ils se prononcent** (ex. :
+   « Bart De Wévère », « Vooruit » -> « Voruit ») : la voix lit ce qui est écrit. Ponctue pour
+   donner du rythme (« Résultat ? », « : », « ! ») plutôt que de multiplier les points.
+2. `python3 tools/make_reel.py posts/<dossier> --voice tom`
    -> `reel.mp4` (voix off française, slides plein écran, zoom fluide, transitions, barre de
    progression, musique libre de `assets/music/` baissée sous la voix s'il y en a). Le script
    affiche le crédit musique s'il en a utilisé une.

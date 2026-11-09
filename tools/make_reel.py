@@ -19,7 +19,7 @@ HF = "https://huggingface.co/rhasspy/piper-voices/resolve/main/fr/fr_FR"
 
 args = sys.argv[1:]
 d = args[0]
-voice = args[args.index("--voice") + 1] if "--voice" in args else "kokoro"
+voice = args[args.index("--voice") + 1] if "--voice" in args else "tom"
 base = float(args[args.index("--sec") + 1]) if "--sec" in args else 3.5
 slides = sorted(glob.glob(os.path.join(d, "slide-*.jpg")),
                 key=lambda p: int(p.rsplit("-", 1)[1].split(".")[0]))
@@ -110,12 +110,13 @@ if voice != "none":
                   "acompressor=threshold=-20dB:ratio=2.5:attack=5:release=80:makeup=2dB,"
                   "loudnorm=I=-16:TP=-1.5:LRA=7")
         else:
-            run(sys.executable, "-m", "piper", "-m", model, "-f", raw, "--length-scale", "0.95",
-                "--noise-scale", "0.667", "--noise-w-scale", "0.8", "--sentence-silence", "0.12",
+            # Plus de variation d'intonation (noise), débit un peu rapide, pauses courtes.
+            run(sys.executable, "-m", "piper", "-m", model, "-f", raw, "--length-scale", "0.93",
+                "--noise-scale", "0.8", "--noise-w-scale", "1.0", "--sentence-silence", "0.1",
                 input=t, text=True, capture_output=True)
-            af = ("highpass=f=80,equalizer=f=3500:t=q:w=1.2:g=2,"
+            af = ("highpass=f=70,equalizer=f=150:t=q:w=1:g=2,equalizer=f=3000:t=q:w=1.2:g=2,"
                   "acompressor=threshold=-20dB:ratio=3:attack=5:release=80:makeup=3dB,"
-                  "loudnorm=I=-16:TP=-1.5:LRA=7")
+                  "loudnorm=I=-16:TP=-1.5:LRA=9")
         # Traitement « studio » : voix plus claire et régulière en volume.
         run("ffmpeg", "-y", "-loglevel", "error", "-i", raw, "-af", af, "-ar", "44100", w)
         os.remove(raw)
