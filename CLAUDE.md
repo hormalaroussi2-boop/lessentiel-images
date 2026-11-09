@@ -25,12 +25,18 @@ Si rien de pertinent : story sans photo.
 ## Vidéos (Reels) — chaque soir après le post de 20h
 Style « actu rapide » (inspiré des formats d'actu en vidéo courte, sans copier aucun autre
 compte) : une idée par écran, titres forts, rythme rapide.
-1. Dans le dossier du post de 20h : `python3 tools/make_reel.py posts/<dossier> 3.5`
-   -> `reel.mp4` (slides en plein écran, zoom fluide, transitions, barre de progression,
-   musique libre de `assets/music/`). Le script affiche le crédit musique.
-2. Écris `reel_caption.txt` : accroche courte (« L'actu du jour en 30 secondes 👇 »),
-   les 5 titres, une question, les hashtags, et en dernière ligne le crédit musique affiché.
-3. Vérifie une image du milieu de la vidéo (ffmpeg -ss 10 -frames:v 1), puis
+1. Écris `posts/<dossier>/voix.txt` : le texte de la **voix off**, une ligne par slide, dans
+   l'ordre (cover, 5 stories, end). Style oral, phrases courtes et vivantes, comme si tu
+   expliquais l'actu à un ami : « En Belgique, coup de théâtre : … ». 1 à 2 phrases par
+   ligne, sans abréviations ni emojis (la voix les lit mal). Écris les nombres en toutes
+   lettres si c'est ambigu.
+2. `python3 tools/make_reel.py posts/<dossier> --voice tom`
+   -> `reel.mp4` (voix off française, slides plein écran, zoom fluide, transitions, barre de
+   progression, musique libre de `assets/music/` baissée sous la voix s'il y en a). Le script
+   affiche le crédit musique s'il en a utilisé une.
+3. Écris `reel_caption.txt` : accroche courte (« L'actu du jour en 30 secondes 👇 »),
+   les 5 titres, une question, les hashtags, et en dernière ligne le crédit musique affiché (s'il y en a un).
+4. Vérifie une image du milieu de la vidéo (ffmpeg -ss 10 -frames:v 1), puis
    `python3 tools/publish.py posts/<dossier> --reel`, commit et push.
 Jamais de vidéo, d'extrait ou de musique d'un média, d'un artiste commercial ou d'un éditeur
 de jeu : seulement les fichiers libres de `assets/music/` et nos propres slides.
