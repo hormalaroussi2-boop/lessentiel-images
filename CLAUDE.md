@@ -22,7 +22,10 @@ télécharge le n-ième et affiche le crédit. Mettre dans la story `"image": "i
 l'événement lui-même, donc pas de photo de foule pour une manif précise, pas d'accident, etc.
 Si rien de pertinent : story sans photo.
 
-## Vidéos (Reels) — chaque soir après le post de 20h
+## Vidéos (Reels) — ⏸️ EN PAUSE
+**Le propriétaire a mis les vidéos en pause : ne fais AUCUN Reel tant que cette ligne est là.**
+La méthode ci-dessous reste pour plus tard.
+
 Style « actu rapide » (inspiré des formats d'actu en vidéo courte, sans copier aucun autre
 compte) : une idée par écran, titres forts, rythme rapide.
 1. Écris `posts/<dossier>/voix.txt` : le texte de la **voix off**, une ligne par slide, dans
