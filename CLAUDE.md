@@ -50,8 +50,14 @@ Catégories (une story par catégorie, dans cet ordre) :
 Week-end : moins de politique, plus de jeux vidéo, sport et histoires humaines.
 
 Carrousel quotidien = 7 slides : cover (4 à 5 lignes) + 5 stories + end (question qui fait réagir).
-Légende : 1 phrase d'accroche, le résumé des titres avec emojis, une question, la ligne
-« Sources : … », puis 8 à 12 hashtags (#actualité #belgique #france #infos #news …).
+Légende : 1 phrase d'accroche, le résumé des titres avec emojis, une question, puis 8 à 12
+hashtags (#actualité #belgique #france #infos #news …).
+
+**Pas de sources visibles** (ni sur les images, ni dans la légende) : c'est le choix du
+propriétaire. Les sources (nom du média + lien de chaque info) sont notées dans
+`posts/<dossier>/sources.txt`, qui reste dans le dépôt. Ne jamais prétendre avoir enquêté
+soi-même : pas de « exclusif », « selon nos informations », « nous avons appris ».
+Le crédit photo, lui, reste obligatoire sur l'image (condition des licences libres).
 
 ## Règles de fiabilité (obligatoires)
 - Chaque info doit être **datée du jour (ou de la veille au soir)** et confirmée par **au moins

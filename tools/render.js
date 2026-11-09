@@ -3,7 +3,7 @@
 // post.json : { "date": "LUNDI 9 NOVEMBRE 2026", "edition": "MATIN" | "APRÈS-MIDI" | "SOIR" | "FLASH" | "URGENT",
 //   "slides": [
 //     { "type": "cover", "items": [["ARGENT", "Titre court"], ...] },
-//     { "type": "story", "tag": "ARGENT", "country": "FRANCE", "title": "...", "body": "... <b>mot clé</b> ...", "source": "franceinfo, Le Monde" },
+//     { "type": "story", "tag": "ARGENT", "country": "FRANCE", "title": "...", "body": "... <b>mot clé</b> ...", "image": "img-1.jpg", "credit": "Photo : ..." },
 //     { "type": "end", "question": "Et vous, ... ?" }
 //   ] }
 const { chromium } = require('playwright');
@@ -34,12 +34,12 @@ ${N > 1 ? '<div class="swipe">Faites défiler →</div>' : ''}${foot(n)}`;
     return `${head}<div class="photo" style="background-image:url('${src}')"><div class="credit">${esc(s.credit || '')}</div>
 <div class="tag ontop">${esc(s.tag)}<span class="ctry">${esc(s.country)}</span></div></div>
 <h1 class="withimg">${esc(s.title)}</h1><p class="withimg">${esc(s.body)}</p>
-<div class="src">Source : ${esc(s.source)}</div>${foot(n)}`;
+<div class="src"></div>${foot(n)}`;
   }
   if (s.type === 'story') {
     return `${head}<div class="tag">${esc(s.tag)}<span class="ctry">${esc(s.country)}</span></div>
 <h1>${esc(s.title)}</h1><div class="rule"></div><p>${esc(s.body)}</p>
-<div class="src">Source : ${esc(s.source)}</div>${foot(n)}`;
+<div class="src"></div>${foot(n)}`;
   }
   if (s.type === 'end') {
     return `${head}<div class="q">Et vous ?</div><h1 class="big2">${esc(s.question)}</h1><div class="rule"></div>
