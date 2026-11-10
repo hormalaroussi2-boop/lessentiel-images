@@ -1,0 +1,15 @@
+{ "scenes": [
+  { "type": "hook", "kicker": "LE SAVIEZ-VOUS ?", "title": "Le Manneken-Pis que vous voyez est une <b>copie</b>",
+    "image": "img-1.jpg", "credit": "Photo : Myrabella / Wikimedia Commons (CC BY-SA 3.0)",
+    "voice": "Le saviez-vous ? Le Manneken-Pis que les touristes photographient à Bruxelles... n'est pas l'original !" },
+  { "type": "number", "number": 1619, "label": "Il a été sculpté en bronze par <b>Jérôme Duquesnoy</b>",
+    "voice": "Cette petite statue en bronze a plus de quatre cents ans. Elle a été réalisée en seize cent dix-neuf, par le sculpteur Jérôme Duquesnoy." },
+  { "type": "stamp", "stamp": "VOLÉ", "title": "En <b>1965</b>, il disparaît. Une <b>réplique</b> prend sa place",
+    "voice": "En mille neuf cent soixante-cinq, la statue est volée. Une copie est alors installée au coin de la rue." },
+  { "type": "text", "title": "Le vrai est au <b>Musée de la Ville</b>, sur la Grand-Place",
+    "voice": "Le vrai Manneken-Pis, lui, est bien à l'abri, au Musée de la Ville, sur la Grand-Place." },
+  { "type": "rain", "emoji": "👕", "title": "Et il a des <b>centaines de costumes</b>",
+    "voice": "Et il a sans doute plus de vêtements que vous : des centaines de costumes, offerts du monde entier !" },
+  { "type": "end", "title": "Vous le saviez ? <b>Dites-le en commentaire</b>",
+    "voice": "Alors, vous le saviez ? Dites-le en commentaire, et abonnez-vous pour d'autres histoires." }
+] }

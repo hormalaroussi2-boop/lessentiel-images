@@ -1,0 +1,17 @@
+{ "date": "LE SAVIEZ-VOUS ?", "edition": "",
+  "slides": [
+    { "type": "story", "tag": "SAVIEZ-VOUS ?", "country": "BXL",
+      "title": "Le Manneken-Pis que vous voyez est une copie",
+      "body": "Les touristes se pressent pour le photographier... mais ce n'est <b>pas l'original</b>. Voici son histoire en 30 secondes.",
+      "image": "img-1.jpg", "credit": "Photo : Myrabella / Wikimedia Commons (CC BY-SA 3.0)" },
+    { "type": "story", "tag": "1619", "country": "BRUXELLES",
+      "title": "Une statue de plus de 400 ans",
+      "body": "Le petit bonhomme en bronze a été réalisé en <b>1619</b> par le sculpteur <b>Jérôme Duquesnoy l'Ancien</b>." },
+    { "type": "story", "tag": "1965", "country": "BRUXELLES",
+      "title": "L'original est au musée",
+      "body": "Après un <b>vol en 1965</b>, une <b>réplique</b> a été installée au coin des rues. Le vrai est conservé au <b>Musée de la Ville</b>, dans la Maison du Roi, sur la Grand-Place." },
+    { "type": "story", "tag": "GARDE-ROBE", "country": "BRUXELLES",
+      "title": "Il a plus de vêtements que vous",
+      "body": "Le Manneken-Pis possède <b>des centaines de costumes</b>, offerts du monde entier. Une association choisit chaque année les nouveaux habits qu'il portera." },
+    { "type": "end", "question": "Vous saviez que c'était une copie ?" }
+  ] }
