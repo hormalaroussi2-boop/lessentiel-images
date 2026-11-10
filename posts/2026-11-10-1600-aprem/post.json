@@ -1,0 +1,18 @@
+{ "date": "MARDI 10 NOVEMBRE 2026", "edition": "APRÈS-MIDI",
+  "slides": [
+    { "type": "cover", "items": [
+      ["ARGENT", "L'essence baisse dès demain"],
+      ["TECH", "Panne réseau dans des hôpitaux belges"],
+      ["SOCIÉTÉ", "Éducation : nouvelle journée de mobilisation"]
+    ] },
+    { "type": "story", "tag": "ARGENT", "country": "BELGIQUE",
+      "title": "L'essence baisse dès demain à la pompe",
+      "body": "Dès mercredi, le prix maximum de l'essence 95 E10 passe à <b>1,842 €</b> le litre (<b>-6,3 centimes</b>). Le 98 baisse jusqu'à 8,9 centimes. L'essence n'a plus été aussi bon marché depuis <b>début juillet</b>. Le diesel, lui, ne bouge pas." },
+    { "type": "story", "tag": "TECH", "country": "BELGIQUE",
+      "title": "Panne réseau : des hôpitaux reportent des soins",
+      "body": "L'<b>UZ Brussel</b> a suspendu ses urgences et ses consultations vers midi à cause d'un problème de réseau. D'autres hôpitaux, en Flandre, sont aussi touchés et ont <b>reporté des opérations</b>. Selon l'UZ Brussel, aucune cyberattaque n'est avérée pour l'instant." },
+    { "type": "story", "tag": "SOCIÉTÉ", "country": "FRANCE",
+      "title": "Lycéens, étudiants et profs à nouveau dans la rue",
+      "body": "Des cortèges ont défilé dans de nombreuses villes pour réclamer des moyens et des hausses de salaires : <b>3 500</b> personnes à Lyon, <b>850</b> à Marseille selon les préfectures. À Tours, la mobilisation était <b>nettement plus faible</b> que le 5 novembre." },
+    { "type": "end", "question": "Vous faites le plein aujourd'hui ou vous attendez demain ?" }
+  ] }
