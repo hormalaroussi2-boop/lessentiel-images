@@ -1,0 +1,9 @@
+{ "date": "MARDI 10 NOVEMBRE 2026", "edition": "FLASH",
+  "slides": [
+    { "type": "story", "tag": "SOCIÉTÉ", "country": "FRANCE",
+      "title": "Frigos piratés : la France accuse l'Iran",
+      "body": "Le gouvernement attribue aux <b>Gardiens de la Révolution</b> iraniens la cyberattaque d'octobre contre les frigos de supermarchés sur quelque <b>700 sites</b>. L'ambassadeur d'Iran a été convoqué et la justice a ouvert une enquête." },
+    { "type": "story", "tag": "ET MAINTENANT ?", "country": "BE · FR",
+      "title": "Paris « ne s'interdit rien »",
+      "body": "Le ministre des Affaires étrangères promet une riposte et veut des <b>sanctions européennes</b> ; le sujet sera discuté lundi entre ministres de l'UE. En <b>Belgique</b>, où le parquet fédéral enquête, Maxime Prévot dit prendre ces informations <b>très au sérieux</b>." }
+  ] }
