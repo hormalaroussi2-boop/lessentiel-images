@@ -1,0 +1,14 @@
+{ "date": "MARDI 10 NOVEMBRE 2026", "edition": "SOIR",
+  "slides": [
+    { "type": "cover", "items": [
+      ["EMPLOI", "Vynova demande sa faillite : 600 emplois"],
+      ["SOCIÉTÉ", "Harry à Bruxelles contre les dangers des réseaux"]
+    ] },
+    { "type": "story", "tag": "EMPLOI", "country": "BELGIQUE",
+      "title": "Vynova demande sa faillite : 600 emplois menacés",
+      "body": "Le chimiste de <b>Tessenderlo-Ham</b> (Limbourg), en réorganisation judiciaire depuis fin 2025, a annoncé ce mardi qu'il n'avait <b>plus d'autre option</b>. Le tribunal devrait se prononcer <b>jeudi</b>. Son usine française de Mazingarbe reste dans l'incertitude." },
+    { "type": "story", "tag": "SOCIÉTÉ", "country": "BRUXELLES",
+      "title": "Le prince Harry au Parlement européen",
+      "body": "Il est venu alerter sur les <b>dangers des réseaux sociaux</b> pour les jeunes : « Je suis ici en tant que <b>père</b> ». Avec Meghan, il a rencontré la mère d'un jeune victime de <b>cyberharcèlement</b>." },
+    { "type": "end", "question": "Faut-il interdire les réseaux sociaux avant 15 ans ?" }
+  ] }
