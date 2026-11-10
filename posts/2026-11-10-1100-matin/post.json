@@ -1,0 +1,10 @@
+{ "date": "MARDI 10 NOVEMBRE 2026", "edition": "MATIN",
+  "slides": [
+    { "type": "cover", "items": [
+      ["ARGENT", "Kot : 600 € par mois en moyenne"]
+    ] },
+    { "type": "story", "tag": "ARGENT", "country": "BELGIQUE",
+      "title": "Un kot coûte désormais 600 € par mois",
+      "body": "C'est la moyenne en Belgique cette année, dont environ <b>105 € de charges</b>, selon l'étude annuelle Kotkompas. C'est <b>10 € de plus</b> que l'an dernier, et <b>+26 % en six ans</b>. Bruxelles reste la ville la plus chère pour les étudiants." },
+    { "type": "end", "question": "Étudiants : combien payez-vous votre kot ?" }
+  ] }
